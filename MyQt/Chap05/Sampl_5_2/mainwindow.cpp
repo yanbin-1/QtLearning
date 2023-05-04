@@ -71,10 +71,32 @@ void MainWindow::on_btnAppendLst_clicked()
     //创建空行
     strModel->insertRow(row);
 
+    //取得新创建的行的索引
     QModelIndex mIndex = strModel->index(row, 0);
 
-    QModelIndex mIndex1 = QAbstractItemModel::createIndex(row, 0);
+    //设置新行的文本
+    strModel->setData(mIndex, "NewAppendItem");
 
-    strModel->setData(mIndex1, "NewItem");
+    //将新行设置为当前索引
+    ui->listView->setCurrentIndex(mIndex);
+}
 
+void MainWindow::on_btnInsertLst_clicked()
+{
+    QModelIndex curIndex = ui->listView->currentIndex();
+    int curRow = curIndex.row();
+    if (curRow == -1){
+        ui->label->setText("请选中Item");
+        return ;
+    }
+
+    strModel->insertRow(curRow);
+    strModel->setData(curIndex, "NewInsertItem");
+    ui->listView->setCurrentIndex(curIndex);
+}
+
+void MainWindow::on_listView_clicked(const QModelIndex &index)
+{
+    int row = index.row(), col = index.column();
+    ui->label->setText(QString::asprintf("行：%d 列：%d ", row, col));
 }

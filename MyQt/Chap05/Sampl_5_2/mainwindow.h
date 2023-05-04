@@ -30,6 +30,10 @@ private slots:
 
     void on_btnAppendLst_clicked();
 
+    void on_btnInsertLst_clicked();
+
+    void on_listView_clicked(const QModelIndex &index);
+
 private:
     Ui::MainWindow *ui;
 

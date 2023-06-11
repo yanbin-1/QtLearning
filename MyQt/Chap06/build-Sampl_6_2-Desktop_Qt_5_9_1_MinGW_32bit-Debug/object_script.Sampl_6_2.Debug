@@ -1,0 +1,12 @@
+INPUT(
+./debug\main.o
+./debug\mymainwindow.o
+./debug\dialogsetsize.o
+./debug\dialogsetheaders.o
+./debug\dialoglocation.o
+./debug\qrc_res.o
+./debug\moc_mymainwindow.o
+./debug\moc_dialogsetsize.o
+./debug\moc_dialogsetheaders.o
+./debug\moc_dialoglocation.o
+);

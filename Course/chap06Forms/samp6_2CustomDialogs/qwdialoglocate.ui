@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>332</width>
-    <height>142</height>
+    <width>562</width>
+    <height>400</height>
    </rect>
   </property>
   <property name="font">
@@ -53,15 +53,15 @@
         </property>
        </widget>
       </item>
-      <item row="1" column="1">
-       <widget class="QSpinBox" name="spinBoxRow"/>
-      </item>
       <item row="1" column="2">
        <widget class="QCheckBox" name="chkBoxRow">
         <property name="text">
          <string>行增</string>
         </property>
        </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QSpinBox" name="spinBoxRow"/>
       </item>
       <item row="2" column="0">
        <widget class="QLabel" name="label_3">
@@ -84,7 +84,7 @@
         <string>设定文字</string>
        </property>
        <property name="icon">
-        <iconset resource="res.qrc">
+        <iconset>
          <normaloff>:/images/images/506.bmp</normaloff>:/images/images/506.bmp</iconset>
        </property>
       </widget>
@@ -95,7 +95,7 @@
         <string>关  闭</string>
        </property>
        <property name="icon">
-        <iconset resource="res.qrc">
+        <iconset>
          <normaloff>:/images/images/132.bmp</normaloff>:/images/images/132.bmp</iconset>
        </property>
       </widget>

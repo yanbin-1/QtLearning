@@ -1,0 +1,12 @@
+INPUT(
+./release\main.o
+./release\mymainwindow.o
+./release\dialogsetsize.o
+./release\dialogsetheaders.o
+./release\dialoglocation.o
+./release\qrc_res.o
+./release\moc_mymainwindow.o
+./release\moc_dialogsetsize.o
+./release\moc_dialogsetheaders.o
+./release\moc_dialoglocation.o
+);

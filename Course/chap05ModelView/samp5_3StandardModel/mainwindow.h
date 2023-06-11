@@ -32,7 +32,7 @@ public:
     ~MainWindow();
 
 private slots:
- //当前选择单元格发生变化
+    //当前选择单元格发生变化
     void on_currentChanged(const QModelIndex &current, const QModelIndex &previous);
 
 

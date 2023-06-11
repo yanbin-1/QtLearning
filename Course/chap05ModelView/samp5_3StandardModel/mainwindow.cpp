@@ -92,11 +92,11 @@ void MainWindow::on_currentChanged(const QModelIndex &current, const QModelIndex
     {
         LabCellPos->setText(QString::asprintf("当前单元格：%d行，%d列",
                                   current.row(),current.column())); //显示模型索引的行和列号
-        QStandardItem   *aItem;
+        QStandardItem* aItem;
         aItem=theModel->itemFromIndex(current); //从模型索引获得Item
         this->LabCellText->setText("单元格内容："+aItem->text()); //显示item的文字内容
 
-        QFont   font=aItem->font(); //获取item的字体
+        QFont font=aItem->font(); //获取item的字体
         ui->actFontBold->setChecked(font.bold()); //更新actFontBold的check状态
     }
 }

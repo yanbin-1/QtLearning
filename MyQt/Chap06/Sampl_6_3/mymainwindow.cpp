@@ -54,8 +54,6 @@ void MyMainWindow::on_actWidgetInsite_triggered()
                                          QString::asprintf("Doc %d", ui->tabWidget->count()));
     ui->tabWidget->setCurrentIndex(curIndex);
     ui->tabWidget->setVisible(true);
-
-
 }
 
 void MyMainWindow::on_tabWidget_tabCloseRequested(int index)
@@ -77,7 +75,44 @@ void MyMainWindow::on_tabWidget_currentChanged(int index)
 
 void MyMainWindow::on_actWidget_triggered()
 {
-    MainWindowDoc* winDoc = new MainWindowDoc(this);
+    // this是MainWindowDoc的父类，如果父类窗口被关闭了，winDoc也关闭
+//    MainWindowDoc* winDoc = new MainWindowDoc(this);
+
+    // 如果父类窗口被关闭了，winDoc不关闭
+    MainWindowDoc* winDoc = new MainWindowDoc;
+
+    winDoc->setAttribute(Qt::WA_DeleteOnClose);
+
+    // 设置窗口标题
+    winDoc->setWindowTitle("Widget独立显示");
+
+    // 设置窗口透明度
+    winDoc->setWindowOpacity(0.7);
 
     winDoc->show();
+}
+
+void MyMainWindow::on_actWindowInsite_triggered()
+{
+    FormTable* formTable = new FormTable(this);
+    formTable->setAttribute(Qt::WA_DeleteOnClose);
+    int index = ui->tabWidget->addTab(formTable,
+                                      QString::asprintf("Table %d", ui->tabWidget->count()));
+    ui->tabWidget->setCurrentIndex(index);
+    ui->tabWidget->setVisible(true);
+}
+
+void MyMainWindow::on_actQuit_triggered()
+{
+    this->close();
+}
+
+void MyMainWindow::on_actWindow_triggered()
+{
+    FormTable* formTable = new FormTable(this);
+    formTable->setAttribute(Qt::WA_DeleteOnClose);
+
+    formTable->setWindowTitle("FormTable独立显示");
+    formTable->setWindowOpacity(0.7);
+    formTable->show();
 }

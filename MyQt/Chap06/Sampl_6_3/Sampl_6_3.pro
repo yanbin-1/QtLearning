@@ -26,15 +26,18 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
         mymainwindow.cpp \
-    docmainwindow.cpp
+    docmainwindow.cpp \
+    formtable.cpp
 
 HEADERS += \
         mymainwindow.h \
-    docmainwindow.h
+    docmainwindow.h \
+    formtable.h
 
 FORMS += \
         mymainwindow.ui \
-    docmainwindow.ui
+    docmainwindow.ui \
+    formtable.ui
 
 RESOURCES += \
     res.qrc

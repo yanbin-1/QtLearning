@@ -5,6 +5,7 @@
 #include <QPainter>
 
 #include "docmainwindow.h"
+#include "formtable.h"
 
 namespace Ui {
 class MyMainWindow;
@@ -26,6 +27,12 @@ private slots:
     void on_tabWidget_currentChanged(int index);
 
     void on_actWidget_triggered();
+
+    void on_actWindowInsite_triggered();
+
+    void on_actQuit_triggered();
+
+    void on_actWindow_triggered();
 
 private:
     Ui::MyMainWindow *ui;
